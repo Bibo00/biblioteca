@@ -1,0 +1,1 @@
+<h1>Catalogue page view</h1>
