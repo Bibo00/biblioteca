@@ -1,6 +1,6 @@
 <?php
 
-class Database
+Trait Database
 {
     private function connect()
     {
@@ -9,15 +9,15 @@ class Database
         return $con;
     }
 
-    public function query()
+    public function query($query, $data = [])
     {
         $con = $this->connect();
         $stm = $con->prepare($query);
 
-        $check = $stm->execute();
+        $check = $stm->execute($data);
 
         if ($check) {
-            $result = $stm->fetchAll(PDO::FETCH_OBJ);
+            $result = $stm->fetchAll(PDO::FETCH_ASSOC);
             if(is_array($result) && count($result))
             {
                 return $result;

@@ -1,4 +1,7 @@
 <?php
+spl_autoload_register(function($classname){
+    echo ucfirst($classname);
+})
 
 require 'config.php';
 require 'functions.php';
