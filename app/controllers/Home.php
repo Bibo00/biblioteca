@@ -4,12 +4,12 @@ class Home extends Controller
 {
     public function index()
     {
-        $model = new Model;
-        $data = array("Anno" => 5);
-        $ris = $model->where($data);
-        foreach ($ris as $row) {
+        $user = new User;
+        $data = array("Anno" => 2, "Sezione" => "B");
+        $ris = $user->insert($data);
+        /*foreach ($ris as $row) {
             echo "<label> classe: " . $row['Anno'] . $row['Sezione'];
-        }
+        }*/
 
         $this->view('home');
     }
