@@ -4,7 +4,6 @@ Trait Model
 {
     use Database;
 
-    protected $table = 'classe';
     public function where($data)
     {
         $keys = array_keys($data);
@@ -16,9 +15,17 @@ Trait Model
         return $this->query($query, $data);
     }
 
+    public function findAll(){
+        $query = "SELECT * FROM $this->table ";
+        return $this->query($query);
+    }
+
     public function insert($data)
     {
-        
+        $keys = array_keys($data);
+        $query = "INSERT INTO $this->table (" . implode(", ", $keys) . ") VALUES (:" . implode(",:", $keys) . ")";
+        $this->query($query, $data);
+        return false;
     }
 
     public function update($id, $data)

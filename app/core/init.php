@@ -1,7 +1,7 @@
 <?php
 spl_autoload_register(function($classname){
-    echo ucfirst($classname);
-})
+    require $filename = "../app/models/" . ucfirst($classname) . ".php";
+});
 
 require 'config.php';
 require 'functions.php';
