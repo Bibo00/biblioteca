@@ -31,11 +31,14 @@ class App
         }
         
         $controller = new $this->controller;
-        if (method_exists($controller, $URL[1])) {
-            $this->method = $URL[1];
+        if($URL[1] != null){
+            if (method_exists($controller, $URL[1])) {
+                $this->method = $URL[1];
+            }
         }
+        
 
-        call_user_func_array([$controller, $this->method], ["Anno" => $URL[2]]);
+        call_user_func_array([$controller, $this->method], [$URL[2]]);
         
         
     }
