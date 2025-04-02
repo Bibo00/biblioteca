@@ -162,41 +162,27 @@
 <script> /*Script ajax per compilare datalist*/
 
     // Funzione per fare richiesta AJAX al server
-    function trovaIlibri(query) {  // da notare che la query è il valore del contenuto della searchbar
-        const datalist = document.getElementById('suggerimenti');
-
-        // Creiamo la richiesta AJAX
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', `home/ricerca/${query}`, true);  //nell url GET inserisce il valore di quanto inserito nella navbar
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                // Se la risposta è corretta (status 200), processa i dati JSON
-                datalist.innerHTML = "";
-                const books = JSON.parse(xhr.responseText);
-
-
-
-                // Aggiunge ogni risultato come opzione nel datalist
-                for (const book of books) {
-                    const option = document.createElement('option');
-                    option.value = `${book.Anno} ${book.Sezione}`;  // Usa i campi corretti, da sostituire con i campi effettivi dell'oggetto libro
-                    datalist.appendChild(option);
-                }
-
-            }
-        };
-        xhr.send();
-    }
+    
 
     // Aggiungi un event listener per l'input dell'utente
     document.getElementById('search-bar').addEventListener('input', function() {
-    const query = this.value;  // qui praticamente il valore è quello inserito nella search bar
-    if (query.length >= 2) {  // Inizia a cercare solo dopo che l'utente scrive almeno 2 caratteri
-        trovaIlibri(query);
-    }
+        const query = this.value;  // qui praticamente il valore è quello inserito nella search bar
+        if (query.length >= 2) {  // Inizia a cercare solo dopo che l'utente scrive almeno 2 caratteri
+            trovaLibri(query, function(books) {
+                console.log(books);
+                const datalist = document.getElementById('suggerimenti');
+                datalist.innerHTML = "";
+                for (const book of books) { // Qui hai usato "books", non "libri"
+                    const option = document.createElement('option');
+                    const img = document.createElement('img');
+                    option.value = `${book.Titolo}`;
+                    datalist.appendChild(option);
+                }
+            });
+        }
     });
 </script>
-
+<script src="<?=ROOT ?>/assets/js/ajax.js"></script>
 
 
 </body>

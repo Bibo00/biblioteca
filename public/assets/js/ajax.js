@@ -7,7 +7,6 @@ function trovaLibri(query, callback) {  // da notare che la query è il valore d
             // Se la risposta è corretta (status 200), processa i dati JSON
             const books = JSON.parse(xhr.responseText);
             const img = document.createElement('img');
-            
             callback(books);
         }
     };
