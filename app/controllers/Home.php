@@ -12,9 +12,12 @@ class Home extends Controller
         $arr = array("Titolo" => $Titolo . "%");
         $ris = $user->where($arr);
         //print_r($ris);
-        $ris[0]->Copertina = base64_encode($ris[0]->Copertina);
+        toBase64($ris);
         $jsonris = json_encode($ris);
         print_r($jsonris);
+        //$this->view('home');
         return $jsonris;
     }
+
+
 }
