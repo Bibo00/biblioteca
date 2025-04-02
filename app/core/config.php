@@ -1,3 +1,3 @@
 <?php
 
-define('ROOT', 'http://localhost/LeonardoBibini/biblioteca/public');
+define('ROOT', 'http://localhost/biblioteca/public');

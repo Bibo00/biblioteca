@@ -7,9 +7,9 @@ Trait Model
     public function where($data)
     {
         $keys = array_keys($data);
-        $query = "SELECT * FROM $this->table WHERE ";
+        $query = "SELECT * FROM $this->table WHERE  ";
         foreach ($keys as $key) {
-            $query .= $key . "=:" . $key . " AND ";
+            $query .= $key . " LIKE :" . $key . " AND ";
         }
         $query = trim($query, " AND ");
         return $this->query($query, $data);

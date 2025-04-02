@@ -3,5 +3,5 @@
 class User
 {
     use Model;
-    protected $table = "classe";
+    protected $table = "libro";
 }

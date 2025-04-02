@@ -4,6 +4,7 @@ class App
 {
     private $controller = 'Home';
     private $method     = 'index';
+    private $data = [];
 
     private function splitUrl()
     {
@@ -31,14 +32,17 @@ class App
         }
         
         $controller = new $this->controller;
-        if($URL[1] != null){
+        if(count($URL) > 1){
             if (method_exists($controller, $URL[1])) {
                 $this->method = $URL[1];
+            }
+            if(count($URL) > 2){
+                $this->data = $URL[2];
             }
         }
         
 
-        call_user_func_array([$controller, $this->method], [$URL[2]]);
+        call_user_func_array([$controller, $this->method], [$this->data]);
         
         
     }
