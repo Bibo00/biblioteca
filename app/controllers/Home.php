@@ -10,7 +10,7 @@ class Home extends Controller
     public function ricerca($Titolo){
         $user = new User;
         $Titolo = str_replace("-", " ", $Titolo);
-        $arr = array("Titolo" => $Titolo . "%");
+        $arr = array("Titolo" => "%" . $Titolo . "%");
         
         
         $ris = $user->where($arr);

@@ -1,0 +1,137 @@
+
+.input-box{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.dettaglio-libro{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.descrizione-libro {
+	width: 778px;
+	height: 101px;
+	color: #000000;
+	font-family: "Arial";
+	font-weight: bold;
+	font-size: 24px;
+	text-align: justify;
+}
+.header-libro {
+	width: 370px;
+	height: 50px;
+	color: #000000;
+	font-family: "Arial";
+	font-weight: bold;
+	font-size: 36px;
+	text-align: left;
+}
+.copertina {
+	width: 114px;
+	height: 151px;
+}
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Calibri, sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;           /* Larghezza fissa al 100% della pagina */
+    height: 120px;         /* Altezza fissa per l'header */
+    background-color: #fff1;  /* Colore di sfondo chiaro per l'header */
+    display: flex;
+    /*align-items: center;       /* Centra il contenuto verticalmente */
+    justify-content: space-between; /* Distribuisce gli elementi orizzontalmente */
+    padding: 0 20px; /* Spazio laterale */
+    box-sizing: border-box;
+    border-bottom: 1px solid #000;  /* Bordo inferiore di 1px */
+}
+
+.icons-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Allinea le icone a destra */
+    gap: 20px; 
+}
+
+#mattei {
+    width: 110px;        /* Larghezza fissa per l'immagine */
+    height: 110px;       /* Altezza fissa per l'immagine */
+}
+
+#search-bar {
+    height: 30px;         /* Altezza fissa per la barra di ricerca */
+    width: 100%;           /* Larghezza della barra di ricerca */
+    font-size: 16px;      /* Imposta la dimensione del font */
+    padding: 5px 10px;    /* Padding interno per la barra di ricerca */
+    border-radius: 20px;  /* Aggiungi bordi arrotondati */
+}
+
+.head {
+    display: inline-block;
+}
+
+#campanella, #account {
+    width: 70px;
+    height: 70px;
+}
+
+/* Stile per la barra laterale */
+.sidebar {
+    width: 200px;         /* Imposta la larghezza fissa dell'aside */
+    padding: 0;           /* Rimuove il padding per evitare spazi indesiderati */
+    position: fixed;      /* Fissa la sidebar al lato della pagina */
+    top: 120px;           /* Inizia sotto l'header */
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box; /* Assicura che il padding e il bordo non influenzino la larghezza */
+    display: flex;        /* Abilita Flexbox */
+    flex-direction: column; /* Allinea i div verticalmente */
+    border-right: 1px solid black;  /* Aggiunge un bordo nero alla sidebar */
+}
+
+/* Fai sì che i menu item si estendano in larghezza per tutta la sidebar */
+.menu-item {
+    display: flex;                /* Dispone gli elementi orizzontalmente */
+    align-items: center;          /* Centra verticalmente gli elementi */
+    justify-content: flex-start;  /* Distanza tra l'immagine a sinistra e il testo a destra */
+    padding: 20px 20px;           /* Padding interno per i div */
+    height: 80px;                 /* Imposta un'altezza fissa per i menu-item */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box; /* Assicura che il padding non influisca sulla larghezza */
+    margin: 0;           /* Rimuove i margini per evitare spazi laterali indesiderati */
+}
+
+.menu-item:hover {
+    background-color: #ccc;
+}
+
+/* Stile per l'immagine dentro il menu */
+.menu-icon {
+    width: 50px;          /* Larghezza fissa per l'immagine */
+    height: 50px;         /* Altezza fissa per l'immagine */
+    object-fit: contain;  /* Mantiene le proporzioni corrette dell'immagine */
+    margin-right: 20px;   /* Spazio tra l'immagine e il testo */
+}
+
+/* Stile per il contenuto principale */
+main.main-content {
+    margin-left: 220px;   /* Spazio per il menu laterale (lascia uno spazio vuoto a sinistra) */
+    padding: 20px;
+}
+
+a {
+text-decoration: none;  /* Rimuove la sottolineatura */
+color: inherit;         /* Mantiene il colore del testo originale */
+}
