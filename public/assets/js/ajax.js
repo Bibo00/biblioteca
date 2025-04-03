@@ -1,9 +1,9 @@
-function trovaLibri(query, callback) {  // da notare che la query è il valore del contenuto della searchbar
+function trovaLibri(query, callback) {
     // Creiamo la richiesta AJAX
-    console.log(query);
+    //console.log(query);
     query = query.replace(/ /g, "-");
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `home/ricerca/${query}`, true);  //nell url GET inserisce il valore di quanto inserito nella navbar
+    xhr.open('GET', `${query}`, true);  //nell url GET inserisce il valore di quanto inserito nella navbar
     xhr.onload = function() {
         if (xhr.status === 200) {
             // Se la risposta è corretta (status 200), processa i dati JSON

@@ -6,69 +6,6 @@
     <title>Header con Lunghezza Fissa</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="<?=asset ?>/css/homeStyle.css">
-    <style>
-        /* Contenitore della barra di ricerca */
-        .search-container {
-            position: relative;
-            width: 700px; /* Barra di ricerca più lunga */
-            display: flex;
-            align-items: center;
-        }
-        /* Stile del dropdown */
-        .dropdown-container {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            max-height: 250px;
-            overflow-y: auto;
-            background-color: white;
-            border: 1px solid #ccc;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 10;
-            display: none; /* Inizialmente nascosto */
-            border-top: none; /* Per attaccarlo alla barra */
-        }
-
-        /* Stile delle opzioni */
-        .dropdown-option {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            cursor: pointer;
-            border-bottom: 1px solid #ddd;
-            transition: background-color 0.3s ease;
-        }
-
-        .dropdown-option:hover {
-            background-color: #f0f0f0;
-        }
-
-        /* Stile per l'immagine della copertina */
-        .dropdown-option img {
-            width: 150px;
-            height: 200px;
-            margin-right: 10px;
-            border-radius: 5px;
-        }
-
-        /* Testo informativo dei libri */
-        .info-libro {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .info-libro h1 {
-            font-size: 16px;
-            margin: 0;
-        }
-
-        .info-libro h3 {
-            font-size: 14px;
-            color: gray;
-            margin: 0;
-        }
-    </style>
 </head>
 <body>
 
@@ -77,7 +14,7 @@
         
         <!-- Contenitore barra di ricerca -->
         <div class="search-container">
-            <input type="text" id="search-bar" placeholder="Cerca...">
+            <input type="text" id="search-bar" class="search-bar" placeholder="Cerca...">
             <div id="dropdown-container" class="dropdown-container"></div>
         </div>
         
@@ -90,36 +27,38 @@
             </a>
         </div>
     </header>
-
+    <aside class="sidebar">
+        <a href="home.HTML">
+            <div class="menu-item">
+                <img src="<?=asset ?>/images/HOME.png" class="menu-icon">
+                <p>Home</p>
+            </div>
+        </a>
+        <a href="catalogo.HTML">
+            <div class="menu-item">
+                <img src="<?=asset ?>/images/CATALOGO.jpg" class="menu-icon">
+                <p>Catalogo</p>
+            </div>
+        </a>
+        <a href="prestiti.HTML">
+            <div class="menu-item">
+                <img src="<?=asset ?>/images/PRESTITI.png" class="menu-icon">
+                <p>Prestiti</p>
+            </div>
+        </a>
+        <a href="utenti.HTML">
+            <div class="menu-item">
+                <img src="<?=asset ?>/images/UTENTI.png" class="menu-icon">
+                <p>Utenti</p>
+            </div>
+        </a>
+    </aside>
     <main class="main-content">
-        <aside class="sidebar">
-            <a href="home.HTML">
-                <div class="menu-item">
-                    <img src="<?=asset ?>/images/HOME.png" class="menu-icon">
-                    <p>Home</p>
-                </div>
-            </a>
-            <a href="catalogo.HTML">
-                <div class="menu-item">
-                    <img src="<?=asset ?>/images/CATALOGO.jpg" class="menu-icon">
-                    <p>Catalogo</p>
-                </div>
-            </a>
-            <a href="prestiti.HTML">
-                <div class="menu-item">
-                    <img src="<?=asset ?>/images/PRESTITI.png" class="menu-icon">
-                    <p>Prestiti</p>
-                </div>
-            </a>
-            <a href="utenti.HTML">
-                <div class="menu-item">
-                    <img src="<?=asset ?>/images/UTENTI.png" class="menu-icon">
-                    <p>Utenti</p>
-                </div>
-            </a>
-        </aside>
-        <h1>Contenuto principale</h1>
-        <p>Questo è il contenuto principale della pagina.</p>
+        
+        <h1>Catalogo principale</h1>
+        <div class="libri">
+            
+        </div>
     </main>
 
     <footer class="footer"></footer>
