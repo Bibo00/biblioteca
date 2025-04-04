@@ -7,7 +7,7 @@
 /* Contenitore della barra di ricerca */
 .search-container {
     position: relative;
-    width: 700px; /* Barra di ricerca più lunga */
+    width: 700px;
     display: flex;
     align-items: center;
     height: 100%;
@@ -102,6 +102,7 @@ header {
     padding: 0 20px; /* Spazio laterale */
     box-sizing: border-box;
     border-bottom: 1px solid #000;  /* Bordo inferiore di 1px */
+    position: sticky;
 }
 
 .icons-container {
@@ -130,8 +131,7 @@ header {
 /* Stile per la barra laterale */
 .sidebar {
     width: 200px;         /* Imposta la larghezza fissa dell'aside */
-    padding: 0;           /* Rimuove il padding per evitare spazi indesiderati */
-    position: fixed;      /* Fissa la sidebar al lato della pagina */
+    padding: 0;          /* Fissa la sidebar al lato della pagina */
     top: 120px;           /* Inizia sotto l'header */
     bottom: 0;
     left: 0;
@@ -169,11 +169,13 @@ header {
 /* Stile per il contenuto principale */
 .main-content {
     height: 100%;
-    width: 100%;
+    /*width: 100%;*/
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
+    overflow-y: auto;
 }
 
 .libri{
@@ -183,4 +185,67 @@ header {
 a {
 text-decoration: none;  /* Rimuove la sottolineatura */
 color: inherit;         /* Mantiene il colore del testo originale */
+}
+
+
+
+
+
+
+
+
+/* Aggiungi stili base per il layout del mockup se non presenti in homeStyle.css */
+
+
+.tot{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+        
+.book-section-title {
+    font-size: 1.5em; /* Dimensione del titolo della sezione */
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.book-row {
+    display: flex; /* Dispone i libri in riga */
+    flex-wrap: wrap; /* Permette ai libri di andare a capo se non c'è spazio */
+    width: 100%;
+    justify-content: space-evenly;
+    margin-bottom: 30px; /* Spazio tra le righe */
+    border-bottom: 1px solid #ccc; /* Linea separatrice come nel mockup */
+    padding-bottom: 30px; /* Spazio sotto la riga prima del bordo */
+}
+.book-row:last-child {
+     border-bottom: none; /* Rimuove il bordo per l'ultima riga */
+     margin-bottom: 0;
+     padding-bottom: 0;
+}
+.book-item {
+    width: 100px; /* Larghezza fissa per ogni libro */
+    text-align: center; /* Centra il testo sotto l'immagine */
+}
+.book-item img {
+    width: 100%; /* L'immagine occupa tutta la larghezza del contenitore */
+    height: 200px; /* Altezza fissa per l'immagine (aggiusta se necessario) */
+    background-color: #f0f0f0; /* Sfondo grigio chiaro per il placeholder */
+    border: 1px solid #ddd; /* Bordo leggero */
+    display: block; /* Rimuove spazio extra sotto l'immagine */
+    margin-bottom: 8px; /* Spazio tra immagine e testo */
+    /* Stili aggiuntivi per simulare l'icona placeholder se non hai un'immagine */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa; /* Colore dell'icona placeholder (se usi un font icon) */
+}
+ /* Puoi usare un'immagine placeholder reale */
+/* .book-item img {
+     content: url('<?=asset ?>/images/placeholder-book.png'); /* Esempio con immagine placeholder */
+/* } */
+
+.book-item p {
+    font-size: 0.9em; /* Dimensione del testo del titolo/autore */
+    color: #555; /* Colore del testo */
+    margin: 0;
 }
