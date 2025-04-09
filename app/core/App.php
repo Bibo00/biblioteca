@@ -2,13 +2,13 @@
 
 class App
 {
-    private $controller = 'Home';
+    private $controller = 'Login';
     private $method     = 'index';
     private $data = [];
 
     private function splitUrl()
     {
-        $URL = $_GET['url'] ?? 'home';
+        $URL = $_GET['url'] ?? 'login';
         //$URL = trim("/ ", $URL);
         $URL = explode("/", $URL);
         //print_r($URL);
