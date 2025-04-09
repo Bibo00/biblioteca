@@ -7,11 +7,14 @@ class Home extends Controller
         $this->view('home');
     }
 
-    public function ricerca($Titolo){
+    public function ricerca($data){
         $user = new User;
-        $Titolo = str_replace("-", " ", $Titolo);
-        $arr = array("Titolo" => "%" . $Titolo . "%");
-        
+        if(!is_numeric($data)){
+            $data = str_replace("-", " ", $data);
+            $arr = array("Titolo" => "%" . $data . "%");
+        } else {
+            $arr = array("IdL" => $data);
+        }
         
         $ris = $user->where($arr);
         //print_r($ris);
