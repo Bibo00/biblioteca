@@ -109,11 +109,8 @@
                                     <h3>${book.Descrizione}</h3>
                                 </div>
                             `;
-
                             divOption.addEventListener('click', () => {
-                                document.getElementById('search-bar').value = book.Titolo;
-                                dropdownContainer.innerHTML = "";
-                                dropdownContainer.style.display = 'none';
+                                window.location.href = `http://localhost/biblioteca/public/libro/index/${book.IdL}`;
                                 // Qui potresti reindirizzare alla pagina del libro o fare altre azioni
                             });
 
@@ -135,6 +132,10 @@
                 dropdownContainer.innerHTML = "";
                 dropdownContainer.style.display = 'none';
             }
+        });
+
+        window.addEventListener('load', () => {
+            findAll(renderBooks);
         });
 
          

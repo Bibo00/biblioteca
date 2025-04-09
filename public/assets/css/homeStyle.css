@@ -223,7 +223,7 @@ color: inherit;         /* Mantiene il colore del testo originale */
      padding-bottom: 0;
 }
 .book-item {
-    width: 100px; /* Larghezza fissa per ogni libro */
+    width: 140px; /* Larghezza fissa per ogni libro */
     text-align: center; /* Centra il testo sotto l'immagine */
 }
 .book-item img {
