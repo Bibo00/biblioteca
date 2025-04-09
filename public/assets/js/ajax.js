@@ -1,6 +1,9 @@
-function trovaLibri(query, callback) {
+const public = "http://localhost/biblioteca/public";
+
+function trovaLibri(query, callback, onError = console.error) {
     query = query.replace(/ /g, "-");
-    fetch(`home/ricerca/${query}`)
+    const url = `${public}/home/ricerca/${query}`;
+    fetch(url)
         .then(response => {
             if(!response.ok) throw new Error(`Errore ${response.status}`);
             return response.json();
@@ -11,7 +14,8 @@ function trovaLibri(query, callback) {
 
 
 function findAll(callback, onError = console.error) {
-    fetch('home/findAll')
+    const url = `${public}/home/findAll`;
+    fetch(url)
         .then(response => {
             if (!response.ok) throw new Error(`Errore ${response.status}`);
             return response.json();
@@ -41,7 +45,9 @@ function renderBooks(books) {
             <img src="data:image/png;base64,${book.Copertina}" alt="${book.Titolo}">
             <p>${book.Titolo} (${book.Anno}) - ${book.Autore}</p>
         `;
-
+        bookItem.addEventListener('click', () => {
+            window.location.href = `http://localhost/biblioteca/public/libro/index/${book.IdL}`;
+        });
         bookRow.appendChild(bookItem);
     });
 
@@ -50,6 +56,3 @@ function renderBooks(books) {
     }
 }
 
-window.addEventListener('load', () => {
-    findAll(renderBooks);
-});
